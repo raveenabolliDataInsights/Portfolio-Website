@@ -44,7 +44,7 @@ export default function App() {
       {/* Hero Section */}
       <section id="hero" className="hero-section">
         <div className="hero-content">
-          <img src="/path-to-your-photo.jpg" alt="Raveena Bolli" className="hero-photo" />
+          <img src="/public/Images/logo.jpg" alt="Raveena Bolli" className="hero-photo" />
           <h1>Raveena Bolli</h1>
           <p>Data Science Student | Software Developer | 5+ Years of Experience</p>
         </div>
