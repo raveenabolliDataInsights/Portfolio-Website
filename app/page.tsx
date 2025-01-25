@@ -31,6 +31,14 @@ export default function App() {
     });
   }
 
+  // Scroll function to view role-based skills
+  function scrollToSkills(role: string) {
+    const skillsSection = document.getElementById(`${role}-skills`);
+    if (skillsSection) {
+      skillsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
   return (
     <main className="main-container">
       {/* Hero Section */}
@@ -86,7 +94,6 @@ export default function App() {
       {/* Skills and Experience for each Role */}
       <section id="skills" className="skills-section">
         <h2>Skills & Experience</h2>
-        {/* Role-Based Skills Display */}
         <div className="skills-container">
           <div className="skills-card" id="cgi-skills">
             <h3>CGI - Skills</h3>
@@ -140,10 +147,4 @@ export default function App() {
       </section>
     </main>
   );
-}
-
-// Scroll function to view role-based skills
-function scrollToSkills(role) {
-  const skillsSection = document.getElementById(`${role}-skills`);
-  skillsSection.scrollIntoView({ behavior: "smooth" });
 }
