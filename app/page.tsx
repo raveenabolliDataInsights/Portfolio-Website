@@ -8,15 +8,12 @@ import outputs from "@/amplify_outputs.json";
 import "@aws-amplify/ui-react/styles.css";
 import "./../app/app.css";
 
-// Amplify configuration
 Amplify.configure(outputs);
 const client = generateClient<Schema>();
 
 export default function App() {
-  // State for the Todo App
   const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
 
-  // Fetch todos from the backend
   function listTodos() {
     client.models.Todo.observeQuery().subscribe({
       next: (data) => setTodos([...data.items]),
@@ -27,7 +24,6 @@ export default function App() {
     listTodos();
   }, []);
 
-  // Function to create new todos
   function createTodo() {
     client.models.Todo.create({
       content: window.prompt("Todo content"),
@@ -35,75 +31,64 @@ export default function App() {
   }
 
   return (
-    <main>
-      {/* Portfolio Introduction */}
-      <header>
-        <h1>Welcome to My Portfolio!</h1>
-        <p>
-          I’m Raveena Bolli, a Data Science Student at the University of Hertfordshire with a strong background in Software Development and Data Engineering. I have 5 years of IT experience and specialize in Data Science, Machine Learning, and Cloud Technologies.
-        </p>
+    <main className="main-container">
+      {/* Hero Section */}
+      <header className="hero-section">
+        <div className="hero-content">
+          <h1>Raveena Bolli</h1>
+          <p>Data Science Student & Software Developer</p>
+          <button onClick={() => window.location.href = "#projects"}>View My Work</button>
+        </div>
       </header>
 
-      {/* Navigation Links */}
-      <nav>
-        <ul>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#blog">Blog</a></li>
-        </ul>
-      </nav>
-
       {/* Skills Section */}
-      <section id="skills">
+      <section id="skills" className="section">
         <h2>Skills</h2>
-        <div className="skills-cards">
+        <div className="skills-container">
           {[
-            { name: "Python", level: "Advanced" },
-            { name: "AWS (EC2, S3, IAM)", level: "Advanced" },
-            { name: "Machine Learning", level: "Intermediate" },
-            { name: "Java", level: "Advanced" },
-            { name: "Spring, Hibernate", level: "Intermediate" },
-            { name: "Data Visualization (Matplotlib, Seaborn)", level: "Intermediate" },
-            { name: "Jenkins, Git", level: "Intermediate" },
+            { name: "Python", level: 90 },
+            { name: "AWS", level: 85 },
+            { name: "Machine Learning", level: 75 },
+            { name: "Java", level: 80 },
           ].map((skill, index) => (
-            <div className="card" key={index}>
+            <div key={index} className="skill-card">
               <h3>{skill.name}</h3>
-              <p>{skill.level}</p>
+              <div className="progress-bar" style={{ width: `${skill.level}%` }}></div>
             </div>
           ))}
         </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects">
+      <section id="projects" className="section">
         <h2>Projects</h2>
-        <div className="project-gallery">
+        <div className="projects-container">
           {[
             {
-              title: "Personal Portfolio Website",
-              description: "A personal portfolio website built using Next.js and AWS Amplify.",
+              title: "Portfolio Website",
+              description: "A modern portfolio website built using Next.js and AWS Amplify.",
               githubLink: "https://github.com/raveenabolliDataInsights/Portfolio-Website",
-              demoLink: "https://yourwebsite.com",  // Replace with your live demo link
+              demoLink: "https://yourwebsite.com",
             },
             {
-              title: "Machine Learning Model Deployment",
+              title: "ML Model Deployment",
               description: "Deployed a machine learning model to AWS EC2 for real-time predictions.",
               githubLink: "https://github.com/your-username/project1",
-              demoLink: "https://yourapp.com", // Replace with your live demo link
+              demoLink: "https://yourapp.com",
             },
           ].map((project, index) => (
-            <div className="project-card" key={index}>
+            <div key={index} className="project-card">
               <h3>{project.title}</h3>
               <p>{project.description}</p>
               <a href={project.githubLink} target="_blank">GitHub</a>
-              {project.demoLink && <a href={project.demoLink} target="_blank">Live Demo</a>}
+              <a href={project.demoLink} target="_blank">Live Demo</a>
             </div>
           ))}
         </div>
       </section>
 
       {/* Blog Section */}
-      <section id="blog">
+      <section id="blog" className="section">
         <h2>Blog</h2>
         <ul>
           <li><a href="/blog/data-science-projects">My Journey in Data Science</a></li>
@@ -111,8 +96,15 @@ export default function App() {
         </ul>
       </section>
 
-      {/* Todo App Section */}
-      <section id="todos">
+      {/* Contact Section */}
+      <section id="contact" className="section">
+        <h2>Contact Me</h2>
+        <p>You can reach me via email at raveena@example.com</p>
+        <button>Connect on LinkedIn</button>
+      </section>
+
+      {/* Todo Section */}
+      <section id="todos" className="section">
         <h2>My Todos</h2>
         <button onClick={createTodo}>+ new</button>
         <ul>
@@ -121,14 +113,6 @@ export default function App() {
           ))}
         </ul>
       </section>
-
-      <div>
-        🥳 App successfully hosted. Try creating a new todo.
-        <br />
-        <a href="https://docs.amplify.aws/nextjs/start/quickstart/nextjs-app-router-client-components/">
-          Review next steps of this tutorial.
-        </a>
-      </div>
     </main>
   );
 }
