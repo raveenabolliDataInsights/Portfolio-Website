@@ -24,76 +24,74 @@ a:hover {
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(to right, #0066cc, #004085);
+  background-color: #000;
   color: white;
   text-align: center;
   padding: 100px 20px;
+  position: relative;
 }
 
 .hero-photo {
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
+  object-fit: cover;
   margin-bottom: 20px;
+  transform: scale(1.1); /* slightly zoomed out */
 }
 
-.cta-btn {
+.hero-content h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.hero-intro {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.cta-btns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.left-btn {
   background-color: #ff6600;
   color: white;
   padding: 12px 20px;
   font-size: 1.2rem;
   border-radius: 6px;
-  text-decoration: none;
 }
 
-.cta-btn:hover {
+.left-btn:hover {
   background-color: #e65c00;
 }
 
-/* Contact Buttons */
+.contact-btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
 .contact-btn {
-  padding: 15px;
-  margin: 10px;
-  border-radius: 8px;
+  padding: 12px;
+  border-radius: 50%;
+  background-color: #333;
   color: white;
-  text-align: center;
-  font-size: 1rem;
+  font-size: 1.5rem;
   display: inline-block;
 }
 
-.email-btn {
+.contact-btn:hover {
   background-color: #007bff;
 }
 
-.phone-btn {
-  background-color: #28a745;
-}
-
-.linkedin-btn {
-  background-color: #0e76a8;
-}
-
-.github-btn {
-  background-color: #333;
-}
-
-.contact-btn:hover {
-  opacity: 0.8;
-}
-
-/* About Me & Timeline */
-.timeline {
-  display: flex;
-  gap: 30px;
-  flex-direction: column;
-}
-
-.timeline-item {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
+.email-btn { background-color: #007bff; }
+.phone-btn { background-color: #28a745; }
+.linkedin-btn { background-color: #0e76a8; }
+.github-btn { background-color: #333; }
 
 /* Skills Section */
 .skills-container {
@@ -115,7 +113,14 @@ a:hover {
   margin-top: 10px;
 }
 
-/* Projects Section */
+/* Certifications Section */
+.aws-badge {
+  max-width: 200px;
+  margin: 20px 0;
+  border: 0;
+}
+
+/* Other Sections */
 .projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -123,31 +128,3 @@ a:hover {
   padding: 50px 20px;
 }
 
-.project-card {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.project-card a {
-  color: #ff6600;
-  text-decoration: none;
-}
-
-.project-card a:hover {
-  color: #e65c00;
-}
-
-/* Certifications Section */
-.certifications-section {
-  padding: 50px 20px;
-  text-align: center;
-  background-color: #f0f0f0;
-}
-
-.certifications-section p {
-  font-size: 1.1rem;
-  color: #555;
-}
