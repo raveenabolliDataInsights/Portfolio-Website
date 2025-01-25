@@ -46,26 +46,24 @@ export default function App() {
         <div className="hero-content">
           <img src="/Images/logo.jpg" alt="Raveena Bolli" className="hero-photo" />
           <h1>Raveena Bolli</h1>
-          <p>Data Science Student | Software Developer | 5+ Years of Experience</p>
-          <a href="#projects" className="cta-btn">See My Work</a>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="contact-section">
-        <div className="contact-buttons">
-          <a href="mailto:raveena.b98@gmail.com" className="contact-btn email-btn">
-            <i className="fas fa-envelope"></i> Email Me
-          </a>
-          <a href="tel:+4407776742437" className="contact-btn phone-btn">
-            <i className="fas fa-phone-alt"></i> Call Me
-          </a>
-          <a href="https://linkedin.com/in/raveenabolli" target="_blank" className="contact-btn linkedin-btn">
-            <i className="fab fa-linkedin"></i> LinkedIn
-          </a>
-          <a href="https://github.com/raveenabolliDataInsights" target="_blank" className="contact-btn github-btn">
-            <i className="fab fa-github"></i> GitHub
-          </a>
+          <p className="hero-intro">Building impactful data-driven solutions with cutting-edge technology.</p>
+          <div className="cta-btns">
+            <a href="#projects" className="cta-btn left-btn">See My Work</a>
+            <div className="contact-btns">
+              <a href="mailto:raveena.b98@gmail.com" className="contact-btn email-btn">
+                <i className="fas fa-envelope"></i>
+              </a>
+              <a href="tel:+4407776742437" className="contact-btn phone-btn">
+                <i className="fas fa-phone-alt"></i>
+              </a>
+              <a href="https://linkedin.com/in/raveenabolli" target="_blank" className="contact-btn linkedin-btn">
+                <i className="fab fa-linkedin"></i>
+              </a>
+              <a href="https://github.com/raveenabolliDataInsights" target="_blank" className="contact-btn github-btn">
+                <i className="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -74,20 +72,17 @@ export default function App() {
         <h2>About Me</h2>
         <p>I have 5+ years of experience in software development, data engineering, and data science. Below, you can find a timeline of my career journey.</p>
         <div className="timeline">
-          <div className="timeline-item" id="cgi">
+          <div className="timeline-item">
             <h3>CGI - Software Engineer (Aug 2018 - Nov 2021)</h3>
             <p>Worked on ETL pipelines and system optimizations for the IoT telecom project.</p>
-            <button onClick={() => scrollToSkills("cgi")}>View Role Details</button>
           </div>
-          <div className="timeline-item" id="optum">
+          <div className="timeline-item">
             <h3>Optum Global Solutions - Software Developer II (Nov 2021 - Sep 2023)</h3>
             <p>Developed front-end features, optimized user experience, and ensured application scalability.</p>
-            <button onClick={() => scrollToSkills("optum")}>View Role Details</button>
           </div>
-          <div className="timeline-item" id="sysglobal">
+          <div className="timeline-item">
             <h3>SysGlobal IT Solutions - Data Analyst Intern (Sept 2024 - May 2025)</h3>
             <p>Analyzed healthcare data, optimized ETL pipelines, and developed Power BI and Tableau reports.</p>
-            <button onClick={() => scrollToSkills("sysglobal")}>View Role Details</button>
           </div>
         </div>
       </section>
