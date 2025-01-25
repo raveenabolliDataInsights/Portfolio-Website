@@ -36,8 +36,11 @@ export default function App() {
       <header className="hero-section">
         <div className="hero-content">
           <h1>Raveena Bolli</h1>
-          <p>Data Science Student & Software Developer</p>
-          <button onClick={() => window.location.href = "#projects"}>View My Work</button>
+          <p>Data Science Student | Software Developer</p>
+          <p>London, UK | raveena.b98@gmail.com | +44 07776742437</p>
+          <div className="cta">
+            <a href="#projects" className="cta-btn">See My Work</a>
+          </div>
         </div>
       </header>
 
@@ -47,11 +50,11 @@ export default function App() {
         <div className="skills-container">
           {[
             { name: "Python", level: 90 },
-            { name: "AWS", level: 85 },
+            { name: "SQL", level: 85 },
+            { name: "AWS", level: 80 },
             { name: "Machine Learning", level: 75 },
-            { name: "Java", level: 80 },
           ].map((skill, index) => (
-            <div key={index} className="skill-card">
+            <div className="skill-card" key={index}>
               <h3>{skill.name}</h3>
               <div className="progress-bar" style={{ width: `${skill.level}%` }}></div>
             </div>
@@ -81,29 +84,38 @@ export default function App() {
               <h3>{project.title}</h3>
               <p>{project.description}</p>
               <a href={project.githubLink} target="_blank">GitHub</a>
-              <a href={project.demoLink} target="_blank">Live Demo</a>
+              {project.demoLink && <a href={project.demoLink} target="_blank">Live Demo</a>}
             </div>
           ))}
         </div>
       </section>
 
-      {/* Blog Section */}
-      <section id="blog" className="section">
-        <h2>Blog</h2>
-        <ul>
-          <li><a href="/blog/data-science-projects">My Journey in Data Science</a></li>
-          <li><a href="/blog/working-with-aws">Working with AWS for Cloud Computing</a></li>
-        </ul>
+      {/* Work Experience Section */}
+      <section id="work" className="section">
+        <h2>Work Experience</h2>
+        <div className="experience-container">
+          {/* Your job roles and responsibilities */}
+          <div className="experience-item">
+            <h3>Data Analyst Intern</h3>
+            <p>SysGlobal IT Solutions Ltd, UK | Sept 2024 - May 2025</p>
+            <ul>
+              <li>Managed and analyzed healthcare datasets using SQL and Python.</li>
+              <li>Optimized ETL pipelines and improved reporting efficiency by 20%.</li>
+            </ul>
+          </div>
+          {/* Other roles can be added here similarly */}
+        </div>
       </section>
 
       {/* Contact Section */}
       <section id="contact" className="section">
         <h2>Contact Me</h2>
-        <p>You can reach me via email at raveena@example.com</p>
-        <button>Connect on LinkedIn</button>
+        <p>Email: <a href="mailto:raveena.b98@gmail.com">raveena.b98@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/raveenabolli" target="_blank">linkedin.com/in/raveenabolli</a></p>
+        <p>GitHub: <a href="https://github.com/raveenabolliDataInsights" target="_blank">github.com/raveenabolliDataInsights</a></p>
       </section>
 
-      {/* Todo Section */}
+      {/* Todo App Section */}
       <section id="todos" className="section">
         <h2>My Todos</h2>
         <button onClick={createTodo}>+ new</button>
