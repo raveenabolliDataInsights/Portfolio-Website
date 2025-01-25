@@ -8,6 +8,7 @@ import outputs from "@/amplify_outputs.json";
 import "@aws-amplify/ui-react/styles.css";
 import "./../app/app.css";
 
+// Initialize AWS Amplify
 Amplify.configure(outputs);
 const client = generateClient<Schema>();
 
@@ -33,98 +34,116 @@ export default function App() {
   return (
     <main className="main-container">
       {/* Hero Section */}
-      <header className="hero-section">
+      <section id="hero" className="hero-section">
         <div className="hero-content">
+          <img src="/path-to-your-photo.jpg" alt="Raveena Bolli" className="hero-photo" />
           <h1>Raveena Bolli</h1>
-          <p>Data Science Student | Software Developer</p>
-          <p>London, UK | raveena.b98@gmail.com | +44 07776742437</p>
-          <div className="cta">
-            <a href="#projects" className="cta-btn">See My Work</a>
-          </div>
-        </div>
-      </header>
-
-      {/* Skills Section */}
-      <section id="skills" className="section">
-        <h2>Skills</h2>
-        <div className="skills-container">
-          {[
-            { name: "Python", level: 90 },
-            { name: "SQL", level: 85 },
-            { name: "AWS", level: 80 },
-            { name: "Machine Learning", level: 75 },
-          ].map((skill, index) => (
-            <div className="skill-card" key={index}>
-              <h3>{skill.name}</h3>
-              <div className="progress-bar" style={{ width: `${skill.level}%` }}></div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="section">
-        <h2>Projects</h2>
-        <div className="projects-container">
-          {[
-            {
-              title: "Portfolio Website",
-              description: "A modern portfolio website built using Next.js and AWS Amplify.",
-              githubLink: "https://github.com/raveenabolliDataInsights/Portfolio-Website",
-              demoLink: "https://yourwebsite.com",
-            },
-            {
-              title: "ML Model Deployment",
-              description: "Deployed a machine learning model to AWS EC2 for real-time predictions.",
-              githubLink: "https://github.com/your-username/project1",
-              demoLink: "https://yourapp.com",
-            },
-          ].map((project, index) => (
-            <div key={index} className="project-card">
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <a href={project.githubLink} target="_blank">GitHub</a>
-              {project.demoLink && <a href={project.demoLink} target="_blank">Live Demo</a>}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Work Experience Section */}
-      <section id="work" className="section">
-        <h2>Work Experience</h2>
-        <div className="experience-container">
-          {/* Your job roles and responsibilities */}
-          <div className="experience-item">
-            <h3>Data Analyst Intern</h3>
-            <p>SysGlobal IT Solutions Ltd, UK | Sept 2024 - May 2025</p>
-            <ul>
-              <li>Managed and analyzed healthcare datasets using SQL and Python.</li>
-              <li>Optimized ETL pipelines and improved reporting efficiency by 20%.</li>
-            </ul>
-          </div>
-          {/* Other roles can be added here similarly */}
+          <p>Data Science Student | Software Developer | 5+ Years of Experience</p>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="section">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:raveena.b98@gmail.com">raveena.b98@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/raveenabolli" target="_blank">linkedin.com/in/raveenabolli</a></p>
-        <p>GitHub: <a href="https://github.com/raveenabolliDataInsights" target="_blank">github.com/raveenabolliDataInsights</a></p>
+      <section id="contact" className="contact-section">
+        <div className="contact-buttons">
+          <a href="mailto:raveena.b98@gmail.com" className="contact-btn email-btn">
+            <i className="fas fa-envelope"></i> Email Me
+          </a>
+          <a href="tel:+4407776742437" className="contact-btn phone-btn">
+            <i className="fas fa-phone-alt"></i> Call Me
+          </a>
+          <a href="https://linkedin.com/in/raveenabolli" target="_blank" className="contact-btn linkedin-btn">
+            <i className="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://github.com/raveenabolliDataInsights" target="_blank" className="contact-btn github-btn">
+            <i className="fab fa-github"></i> GitHub
+          </a>
+        </div>
       </section>
 
-      {/* Todo App Section */}
-      <section id="todos" className="section">
-        <h2>My Todos</h2>
-        <button onClick={createTodo}>+ new</button>
-        <ul>
-          {todos.map((todo) => (
-            <li key={todo.id}>{todo.content}</li>
-          ))}
-        </ul>
+      {/* About Me Section */}
+      <section id="about" className="about-section">
+        <h2>About Me</h2>
+        <p>I have 5+ years of experience in software development, data engineering, and data science. Below, you can find a timeline of my career journey.</p>
+        <div className="timeline">
+          <div className="timeline-item" id="cgi">
+            <h3>CGI - Software Engineer (Aug 2018 - Nov 2021)</h3>
+            <p>Worked on ETL pipelines and system optimizations for the IoT telecom project.</p>
+            <button onClick={() => scrollToSkills("cgi")}>View Role Details</button>
+          </div>
+          <div className="timeline-item" id="optum">
+            <h3>Optum Global Solutions - Software Developer II (Nov 2021 - Sep 2023)</h3>
+            <p>Developed front-end features, optimized user experience, and ensured application scalability.</p>
+            <button onClick={() => scrollToSkills("optum")}>View Role Details</button>
+          </div>
+          <div className="timeline-item" id="sysglobal">
+            <h3>SysGlobal IT Solutions - Data Analyst Intern (Sept 2024 - May 2025)</h3>
+            <p>Analyzed healthcare data, optimized ETL pipelines, and developed Power BI and Tableau reports.</p>
+            <button onClick={() => scrollToSkills("sysglobal")}>View Role Details</button>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills and Experience for each Role */}
+      <section id="skills" className="skills-section">
+        <h2>Skills & Experience</h2>
+        {/* Role-Based Skills Display */}
+        <div className="skills-container">
+          <div className="skills-card" id="cgi-skills">
+            <h3>CGI - Skills</h3>
+            <ul>
+              <li>Apache Kafka</li>
+              <li>Spring Framework</li>
+              <li>Jenkins</li>
+            </ul>
+          </div>
+          <div className="skills-card" id="optum-skills">
+            <h3>Optum Global Solutions - Skills</h3>
+            <ul>
+              <li>HTML/CSS/JS</li>
+              <li>Spring & Hibernate</li>
+              <li>Database Optimization</li>
+            </ul>
+          </div>
+          <div className="skills-card" id="sysglobal-skills">
+            <h3>SysGlobal IT Solutions - Skills</h3>
+            <ul>
+              <li>SQL</li>
+              <li>Power BI & Tableau</li>
+              <li>ETL Pipelines</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="projects-section">
+        <h2>Projects</h2>
+        <div className="projects-container">
+          <div className="project-card">
+            <h3>Portfolio Website</h3>
+            <p>A modern portfolio website built using Next.js and AWS Amplify.</p>
+            <a href="https://github.com/raveenabolliDataInsights/Portfolio-Website" target="_blank">View on GitHub</a>
+          </div>
+          <div className="project-card">
+            <h3>ML Model Deployment</h3>
+            <p>Deployed a machine learning model to AWS EC2 for real-time predictions.</p>
+            <a href="https://github.com/your-username/project1" target="_blank">View on GitHub</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications Section */}
+      <section id="certifications" className="certifications-section">
+        <h2>Certifications</h2>
+        <p>AWS Cloud Practitioner</p>
+        <p>Issued on November 29, 2024 - Expiry on November 29, 2027</p>
       </section>
     </main>
   );
+}
+
+// Scroll function to view role-based skills
+function scrollToSkills(role) {
+  const skillsSection = document.getElementById(`${role}-skills`);
+  skillsSection.scrollIntoView({ behavior: "smooth" });
 }
