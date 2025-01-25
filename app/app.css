@@ -1,41 +1,29 @@
-/* Global Styles */
+/* Global Styling */
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  background-color: #f4f7fb;
+  background-color: #f5f5f5;
   color: #333;
 }
 
 h1, h2, h3 {
   font-weight: 600;
-  color: #222;
-}
-
-a {
-  text-decoration: none;
-  color: #007bff;
-}
-
-a:hover {
-  color: #0056b3;
+  color: #1c1c1c;
 }
 
 /* Hero Section */
 .hero-section {
-  background: #0052cc;
+  background: linear-gradient(to right, #0066cc, #004085);
   color: white;
   text-align: center;
   padding: 100px 20px;
 }
 
-.hero-section h1 {
-  font-size: 3rem;
-}
-
-.hero-section p {
-  font-size: 1.5rem;
+.hero-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
   margin-bottom: 20px;
 }
 
@@ -43,20 +31,79 @@ a:hover {
   background-color: #ff6600;
   color: white;
   padding: 12px 20px;
-  border-radius: 8px;
   font-size: 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
 }
 
 .cta-btn:hover {
   background-color: #e65c00;
 }
 
+/* Contact Buttons */
+.contact-btn {
+  padding: 15px;
+  margin: 10px;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  display: inline-block;
+}
+
+.email-btn {
+  background-color: #007bff;
+}
+
+.phone-btn {
+  background-color: #28a745;
+}
+
+.linkedin-btn {
+  background-color: #0e76a8;
+}
+
+.github-btn {
+  background-color: #333;
+}
+
+.contact-btn:hover {
+  opacity: 0.8;
+}
+
+/* About Me & Timeline */
+.timeline {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.timeline-item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  background-color: #0066cc;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #004085;
+}
+
 /* Skills Section */
 .skills-container {
   display: flex;
-  justify-content: center;
-  gap: 30px;
   flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px 20px;
 }
 
 .skill-card {
@@ -65,72 +112,45 @@ a:hover {
 }
 
 .progress-bar {
-  background-color: #0066cc;
+  background-color: #0052cc;
   height: 10px;
   border-radius: 5px;
   margin-top: 10px;
-  width: 100%;
-  max-width: 100%;
 }
 
-/* Project Section */
+/* Projects Section */
 .projects-container {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
-  flex-wrap: wrap;
+  padding: 50px 20px;
 }
 
 .project-card {
-  width: 300px;
-  background-color: white;
-  border-radius: 10px;
+  background-color: #fff;
   padding: 20px;
+  border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .project-card a {
-  display: block;
-  margin-top: 10px;
   color: #ff6600;
+  text-decoration: none;
 }
 
-/* Work Experience */
-.experience-container {
-  display: flex;
-  gap: 40px;
+.project-card a:hover {
+  color: #e65c00;
 }
 
-.experience-item {
-  width: 45%;
-}
-
-ul {
-  list-style-type: disc;
-  margin-left: 20px;
-}
-
-/* Contact Section */
-#contact {
-  text-align: center;
+/* Certifications Section */
+.certifications-section {
   padding: 50px 20px;
-  background-color: #f8f9fa;
+  text-align: center;
+  background-color: #f0f0f0;
 }
 
-#contact p {
-  font-size: 1.2rem;
-}
-
-/* Todo Section */
-#todos button {
-  background-color: #28a745;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
-#todos button:hover {
-  background-color: #218838;
+.certifications-section p {
+  font-size: 1.1rem;
+  color: #555;
 }
