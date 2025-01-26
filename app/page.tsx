@@ -46,7 +46,6 @@ export default function App() {
         <div className="hero-content">
           <img src="/Images/logo.jpg" alt="Raveena Bolli" className="hero-photo" />
           <h1>Raveena Bolli</h1>
-          <p className="hero-intro">Building impactful data-driven solutions with cutting-edge technology.</p>
           <div className="cta-btns">
             <a href="#projects" className="cta-btn left-btn">See My Work</a>
             <div className="contact-btns">
