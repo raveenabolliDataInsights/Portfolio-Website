@@ -47,7 +47,7 @@ export default function App() {
           <img src="/Images/logo.jpg" alt="Raveena Bolli" className="hero-photo" />
           <h1>Raveena Bolli</h1>
           <div className="cta-btns">
-            <a href="#projects" className="cta-btn left-btn">See My Work</a>
+            <a href="#experience" className="cta-btn left-btn">See My Experience</a>
             <div className="contact-btns">
               <a href="mailto:raveena.b98@gmail.com" className="contact-btn email-btn">
                 <i className="fas fa-envelope"></i>
@@ -66,22 +66,24 @@ export default function App() {
         </div>
       </section>
 
-      {/* About Me Section */}
-      <section id="about" className="about-section">
-        <h2>About Me</h2>
-        <p>I have 5+ years of experience in software development, data engineering, and data science. Below, you can find a timeline of my career journey.</p>
+      {/* Experience Journey Section */}
+      <section id="experience" className="experience-section">
+        <h2>Experience Journey</h2>
         <div className="timeline">
-          <div className="timeline-item">
+          <div className="timeline-item" id="cgi">
             <h3>CGI - Software Engineer (Aug 2018 - Nov 2021)</h3>
-            <p>Worked on ETL pipelines and system optimizations for the IoT telecom project.</p>
+            <p>Worked on ETL pipelines, system optimizations for IoT telecom project.</p>
+            <button onClick={() => scrollToSkills("cgi")}>View Role Details</button>
           </div>
-          <div className="timeline-item">
+          <div className="timeline-item" id="optum">
             <h3>Optum Global Solutions - Software Developer II (Nov 2021 - Sep 2023)</h3>
             <p>Developed front-end features, optimized user experience, and ensured application scalability.</p>
+            <button onClick={() => scrollToSkills("optum")}>View Role Details</button>
           </div>
-          <div className="timeline-item">
+          <div className="timeline-item" id="sysglobal">
             <h3>SysGlobal IT Solutions - Data Analyst Intern (Sept 2024 - May 2025)</h3>
             <p>Analyzed healthcare data, optimized ETL pipelines, and developed Power BI and Tableau reports.</p>
+            <button onClick={() => scrollToSkills("sysglobal")}>View Role Details</button>
           </div>
         </div>
       </section>
@@ -101,23 +103,6 @@ export default function App() {
           <div className="skill-card">
             <h3>Machine Learning</h3>
             <div className="progress-bar" style={{ width: "75%" }}></div>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="projects-section">
-        <h2>Projects</h2>
-        <div className="projects-container">
-          <div className="project-card">
-            <h3>Portfolio Website</h3>
-            <p>A modern portfolio website built using Next.js and AWS Amplify.</p>
-            <a href="https://github.com/raveenabolliDataInsights/Portfolio-Website" target="_blank">View on GitHub</a>
-          </div>
-          <div className="project-card">
-            <h3>ML Model Deployment</h3>
-            <p>Deployed a machine learning model to AWS EC2 for real-time predictions.</p>
-            <a href="https://github.com/your-username/project1" target="_blank">View on GitHub</a>
           </div>
         </div>
       </section>
