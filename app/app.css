@@ -32,8 +32,8 @@ a:hover {
 }
 
 .hero-photo {
-  width: 300px;  /* Increased size */
-  height: 300px; /* Increased size */
+  width: 300px;  /* Larger size */
+  height: 300px; /* Larger size */
   border-radius: 50%;
   margin-bottom: 20px;
   object-fit: cover;
@@ -42,14 +42,13 @@ a:hover {
 }
 
 .hero-content h1 {
-  font-size: 4.5rem; /* Bigger font size */
+  font-size: 4.5rem;
   margin: 0;
+  color: #ff6600;  /* High contrast */
 }
 
 .hero-intro {
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin-bottom: 40px;
+  display: none;  /* Removed intro text as per your request */
 }
 
 .cta-btns {
@@ -102,24 +101,30 @@ a:hover {
 .linkedin-btn { background-color: #0e76a8; }
 .github-btn { background-color: #333; }
 
-/* Skills Section */
-.skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  padding: 40px 20px;
+/* Experience Section */
+.experience-section {
+  padding: 50px 20px;
 }
 
-.skill-card {
-  width: 200px;
-  text-align: center;
+.timeline-item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
-.progress-bar {
-  background-color: #0052cc;
-  height: 10px;
+.timeline-item button {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 10px 15px;
   border-radius: 5px;
-  margin-top: 10px;
+  cursor: pointer;
+}
+
+.timeline-item button:hover {
+  background-color: #e65c00;
 }
 
 /* Certifications Section */
@@ -127,12 +132,4 @@ a:hover {
   max-width: 200px;
   margin: 20px 0;
   border: 0;
-}
-
-/* Projects Section */
-.projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
-  padding: 50px 20px;
 }
