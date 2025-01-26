@@ -32,16 +32,17 @@ a:hover {
 }
 
 .hero-photo {
-  width: 250px;
-  height: 250px;
+  width: 300px;  /* Increased size */
+  height: 300px; /* Increased size */
   border-radius: 50%;
-  object-fit: cover;
   margin-bottom: 20px;
-  transform: scale(1.1); /* slightly zoomed out */
+  object-fit: cover;
+  border: 5px solid #ff6600;  /* Framing with a border */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content h1 {
-  font-size: 4rem;
+  font-size: 4.5rem; /* Bigger font size */
   margin: 0;
 }
 
@@ -63,6 +64,10 @@ a:hover {
   padding: 12px 20px;
   font-size: 1.2rem;
   border-radius: 6px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .left-btn:hover {
@@ -71,8 +76,12 @@ a:hover {
 
 .contact-btns {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 15px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .contact-btn {
@@ -120,11 +129,10 @@ a:hover {
   border: 0;
 }
 
-/* Other Sections */
+/* Projects Section */
 .projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
   padding: 50px 20px;
 }
-
