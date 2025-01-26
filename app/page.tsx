@@ -131,6 +131,22 @@ export default function App() {
         <img src="/Images/AWS Badge.png" alt="AWS Certification Badge" className="aws-badge" />
         <p>Issued on November 29, 2024 - Expiry on November 29, 2027</p>
       </section>
+
+      {/* Social Media Icons Section */}
+      <section id="social-icons" className="social-icons">
+        <a href="https://www.linkedin.com/in/raveenabolli" target="_blank" className="social-icon">
+          <i className="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/raveenabolliDataInsights" target="_blank" className="social-icon">
+          <i className="fab fa-github"></i>
+        </a>
+        <a href="https://www.youtube.com/c/raveenabolli" target="_blank" className="social-icon">
+          <i className="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.facebook.com/raveenabolli" target="_blank" className="social-icon">
+          <i className="fab fa-facebook"></i>
+        </a>
+      </section>
     </main>
   );
 }
