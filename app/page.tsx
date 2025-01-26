@@ -41,10 +41,24 @@ export default function App() {
 
   return (
     <main className="main-container">
+      {/* Sidebar Section */}
+      <section id="sidebar" className="sidebar-section">
+        <div className="profile">
+          <img src="/Images/logo.jpg" alt="Raveena Bolli" className="profile-photo" />
+          <h2>Raveena Bolli</h2>
+        </div>
+        <div className="sidebar-links">
+          <a href="#experience" className="sidebar-link"><i className="fas fa-briefcase"></i> Experience</a>
+          <a href="#skills" className="sidebar-link"><i className="fas fa-cogs"></i> Skills</a>
+          <a href="#certifications" className="sidebar-link"><i className="fas fa-certificate"></i> Certifications</a>
+          <a href="#portfolio" className="sidebar-link"><i className="fas fa-project-diagram"></i> Portfolio</a>
+          <a href="#contact" className="sidebar-link"><i className="fas fa-envelope"></i> Contact</a>
+        </div>
+      </section>
+
       {/* Hero Section */}
       <section id="hero" className="hero-section">
         <div className="hero-content">
-          <img src="/Images/logo.jpg" alt="Raveena Bolli" className="hero-photo" />
           <h1>Raveena Bolli</h1>
           <div className="cta-btns">
             <a href="#experience" className="cta-btn left-btn">See My Experience</a>
@@ -94,14 +108,17 @@ export default function App() {
         <div className="skills-container">
           <div className="skill-card">
             <h3>Python</h3>
+            <img src="/Images/SQL.png" alt="Python" />
             <div className="progress-bar" style={{ width: "90%" }}></div>
           </div>
           <div className="skill-card">
             <h3>AWS</h3>
+            <img src="/Images/Kafka.png" alt="AWS" />
             <div className="progress-bar" style={{ width: "80%" }}></div>
           </div>
           <div className="skill-card">
             <h3>Machine Learning</h3>
+            <img src="/Images/Java.png" alt="Machine Learning" />
             <div className="progress-bar" style={{ width: "75%" }}></div>
           </div>
         </div>
